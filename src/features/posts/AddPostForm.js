@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 import { useDispatch } from 'react-redux'
-import { nanoid } from '@reduxjs/toolkit'
 
 import { addPost } from './postsSlice'
 
@@ -17,13 +16,7 @@ export const AddPostForm = () => {
   const savePost = (e) => {
     e.preventDefault()
     if (title && content) {
-      dispatch(
-        addPost({
-          id: nanoid(),
-          title,
-          content,
-        })
-      )
+      dispatch(addPost(title, content))
       setTitle('')
       setContent('')
     }
