@@ -22,6 +22,7 @@ export const AddPostForm = () => {
       dispatch(addPost(title, content, userId))
       setTitle('')
       setContent('')
+      setUserId('')
     }
   }
 
